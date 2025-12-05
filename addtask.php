@@ -16,8 +16,8 @@
                 <label for="username" class="form-label">Name</label>
                 <select class="form-select form-select-sm form-control" id="username" name="username">
                     <option selected>Select your name</option>
-                    <option value="user_vahid">Vahid</option>
-                    <option value="user_mahdi">Mahdi</option>
+                    <option value="vahid">Vahid</option>
+                    <option value="mahdi">Mahdi</option>
                 </select>
             </div>
             <div class="mb-3">
@@ -30,7 +30,7 @@
             </div>
             <div class="mb-3">
                 <label for="task_date">Date</label>
-                <input type="date" id="task_date" name="task_date" name="date">
+                <input type="date" id="task_date" name="task_date">
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="check_everyday" name="isEveryday">
@@ -46,7 +46,7 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Add</button>
         </form>
     </section>
 </body>

@@ -1,7 +1,7 @@
 <?php
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $username = str_replace("user_", "", $_POST["username"]);
+    $username = $_POST["username"];
     $task = $_POST["task"];
     $duration = $_POST["duration"];
     $task_date = $_POST["task_date"];

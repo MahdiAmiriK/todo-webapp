@@ -13,7 +13,7 @@
     <div class="container-lg">
         <div class="landingPageHeading">
             <h1 class='landingPageH1'>Welcome to ToDoWebApp</h1>
-            <p class='slog'>Slogan</p>
+            <!-- <p class='slog'>Slogan</p> -->
 
         </div>
         <div class="d-grid gap-2 col-6 mx-auto">

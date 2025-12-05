@@ -3,10 +3,7 @@
 try {
     require_once "dbh.inc.php";
 
-    $year = 2025;
-    $month = 12;
-    $monthTasks = "tasks.task_date BETWEEN '" . $year . "-" . $month . "-1' AND '" . $year . "-" . $month . "-" . date("t", strtotime($year . "-" . $month . "-" . 1)) . "'";
-    $sql_select_tasks = "SELECT 
+    $sql_select_task = "SELECT 
                             tasks.id,
                             users.username, 
                             tasks.task, 
@@ -16,11 +13,13 @@ try {
                             tasks.status 
                         FROM tasks 
                         LEFT JOIN users ON users.id = tasks.user_id 
-                        WHERE $monthTasks;";
-    $stmt_select_tasks = $pdo->prepare($sql_select_tasks);
-    $stmt_select_tasks->execute();
-    $result_select_tasks = $stmt_select_tasks->fetchAll(PDO::FETCH_ASSOC);
+                        WHERE tasks.id = $id;";
+    $stmt_select_task = $pdo->prepare($sql_select_task);
+    $stmt_select_task->execute();
+    $result_select_task = $stmt_select_task->fetch(PDO::FETCH_ASSOC);
    
 } catch (Exception $e) {
     echo "connection failed: " . $e->getMessage();
 }
+
+

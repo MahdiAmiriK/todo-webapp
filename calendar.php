@@ -62,7 +62,8 @@
                                                     echo "<p>";
                                                         echo htmlspecialchars($dataSubArray["duration"]) . " min | " 
                                                         . htmlspecialchars($dataSubArray["username"]) . " | " 
-                                                        . htmlspecialchars($dataSubArray["status"]);
+                                                        . htmlspecialchars($dataSubArray["status"]) . " | " 
+                                                        . "<a href='edit.php?id=" . htmlspecialchars($dataSubArray["id"]) . "'><button type='button' class='btn btn-secondary btn-custom'>Edit</button></a>";
                                                     echo "</p>";
                                             echo "</div>";
                                         }
