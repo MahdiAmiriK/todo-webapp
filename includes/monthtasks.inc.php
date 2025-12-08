@@ -16,6 +16,8 @@ try {
 
    
 } catch (Exception $e) {
-    echo "connection failed: " . $e->getMessage();
+    error_log("Database error during getting monthtasks: " . $e->getMessage() . "\n", 3, $logFile);
+    header("Location: ../calendar.php?error=server_error");
+    exit;
 }
 

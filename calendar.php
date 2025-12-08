@@ -16,13 +16,13 @@
             <table class="table table-bordered table-sm text-center align-middle w-100">
                 <thead class="table-dark">
                     <tr>
-                    <th scope="col" class="fw-bold">Monday</th>
-                    <th scope="col" class="fw-bold">Tuesday</th>
-                    <th scope="col" class="fw-bold">Wednesday</th>
-                    <th scope="col" class="fw-bold">Thursday</th>
-                    <th scope="col" class="fw-bold">Friday</th>
-                    <th scope="col" class="fw-bold">Saturday</th>
-                    <th scope="col" class="fw-bold">Sunday</th>
+                    <th scope="col" class="fw-bold">Mon</th>
+                    <th scope="col" class="fw-bold">Tue</th>
+                    <th scope="col" class="fw-bold">Wed</th>
+                    <th scope="col" class="fw-bold">Thu</th>
+                    <th scope="col" class="fw-bold">Fri</th>
+                    <th scope="col" class="fw-bold">Sat</th>
+                    <th scope="col" class="fw-bold">Sun</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -22,5 +22,7 @@ try {
     $result_select_tasks = $stmt_select_tasks->fetchAll(PDO::FETCH_ASSOC);
    
 } catch (Exception $e) {
-    echo "connection failed: " . $e->getMessage();
+    error_log("Database error during getting task by month: " . $e->getMessage() . "\n", 3, $logFile);
+    header("Location: ../calendar.php?error=server_error");
+    exit;
 }

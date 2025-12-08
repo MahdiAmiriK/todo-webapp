@@ -19,7 +19,9 @@ try {
     $result_select_task = $stmt_select_task->fetch(PDO::FETCH_ASSOC);
    
 } catch (Exception $e) {
-    echo "connection failed: " . $e->getMessage();
+    error_log("Database error during getting task by id: " . $e->getMessage() . "\n", 3, $logFile);
+    header("Location: ../calendar.php?error=server_error");
+    exit;
 }
 
 

@@ -1,8 +1,8 @@
 <?php
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $username = $_POST["username"];
-    $task = $_POST["task"];
+    $username = trim($_POST["username"]);
+    $task = trim($_POST["task"]);
     $duration = $_POST["duration"];
     $task_date = $_POST["task_date"];
     $isEveryday = isset($_POST["isEveryday"]) ? 1 : 0;
@@ -42,7 +42,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         exit;
         
     } catch (Exception $e) {
-        echo "connection failed: " . $e->getMessage();
+        error_log("Database error during adding task: " . $e->getMessage() . "\n", 3, $logFile);
+    header("Location: ../calendar.php?error=server_error");
+    exit;
     }
 
 } else {

@@ -1,11 +1,11 @@
 <?php
 
+$logFile = __DIR__ . "/../logs/app.log";
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    $id = $_POST["deleteBtn"];
+    $id = trim($_POST["deleteBtn"]);
     
-    $logFile = __DIR__ . "/../logs/app.log";
-
     if(empty($id) || !ctype_digit($id)){
         error_log("Delete failed: invalid id received. Value: $id\n", 3,  $logFile);
         header("Location: ../calendar.php?error=invalid_id");
