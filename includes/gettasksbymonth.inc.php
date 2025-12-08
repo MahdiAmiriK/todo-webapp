@@ -3,8 +3,8 @@
 try {
     require_once "dbh.inc.php";
 
-    $year = 2025;
-    $month = 12;
+    $year = date("Y");
+    $month = date("m");
     $monthTasks = "tasks.task_date BETWEEN '" . $year . "-" . $month . "-1' AND '" . $year . "-" . $month . "-" . date("t", strtotime($year . "-" . $month . "-" . 1)) . "'";
     $sql_select_tasks = "SELECT 
                             tasks.id,

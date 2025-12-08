@@ -18,24 +18,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $status = "open";
     }
 
-    require_once "dbh.inc.php";
 
-    $sql_user = "SELECT id FROM users WHERE username = ?;";
-    $stmt_user = $pdo->prepare($sql_user);
-    $stmt_user->execute([$username]);
-    $result = $stmt_user->fetch(PDO::FETCH_ASSOC);
-    if(!$result){
-        die("User not found");
-    } else {
-        $user_id = $result["id"];
+    try {
+        require_once "dbh.inc.php";
+
+        $sql_user = "SELECT id FROM users WHERE username = ?;";
+        $stmt_user = $pdo->prepare($sql_user);
+        $stmt_user->execute([$username]);
+        $result = $stmt_user->fetch(PDO::FETCH_ASSOC);
+        if(!$result){
+            die("User not found");
+        } else {
+            $user_id = $result["id"];
+        }
+
+        $sql_insert_task = "INSERT INTO tasks (user_id, task, duration, task_date, is_everyday, status) VALUES (?, ?, ?, ?, ?, ?);";
+        $stmt_insert_task = $pdo->prepare($sql_insert_task);
+        $stmt_insert_task->execute([$user_id, $task, $duration, $task_date, $isEveryday, $status]);
+
+        header("Location: ../index.php?task=success");
+        exit;
+        
+    } catch (Exception $e) {
+        echo "connection failed: " . $e->getMessage();
     }
-
-    $sql_insert_task = "INSERT INTO tasks (user_id, task, duration, task_date, is_everyday, status) VALUES (?, ?, ?, ?, ?, ?);";
-    $stmt_insert_task = $pdo->prepare($sql_insert_task);
-    $stmt_insert_task->execute([$user_id, $task, $duration, $task_date, $isEveryday, $status]);
-
-    header("Location: ../index.php?task=success");
-    exit;
 
 } else {
     echo "Request Method Problem";

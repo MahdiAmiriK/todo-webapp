@@ -23,6 +23,7 @@ $dataToEdit = $result_select_task;
 
     <section class="custom_container">
         <form action="includes/updatetask.inc.php" method="post">
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($dataToEdit['id']) ?>">
             <div class="mb-3">
                 <label for="username" class="form-label">Name</label>
                 <select class="form-select form-select-sm form-control" id="username" name="username">
@@ -55,8 +56,15 @@ $dataToEdit = $result_select_task;
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">Update</button>            
         </form>
+
+        <!-- <form action="deletetask.inc.php" method="post">
+                <button type="submit" class="btn btn-danger" name="deleteBtn" value="<?php echo htmlspecialchars($dataToEdit['id']) ?>">Delete</button>
+        </form> -->
     </section>
 </body>
 </html>
+
+
+

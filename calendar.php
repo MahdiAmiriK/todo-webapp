@@ -11,10 +11,10 @@
     <?php include "navbar.php" ?>
 
     <div class="cal_container p-3 bg-light rounded shadow">
-        <p><?php echo date("F"); ?></p>
+        <h3><?php echo date("F"); ?></h3>
         <div class="calendar table-responsive">
             <table class="table table-bordered table-sm text-center align-middle w-100">
-                <thead class="table-primary">
+                <thead class="table-dark">
                     <tr>
                     <th scope="col" class="fw-bold">Monday</th>
                     <th scope="col" class="fw-bold">Tuesday</th>
@@ -37,7 +37,14 @@
                         $counter = $firstWeekDay;
 
                         require_once "includes/monthtasks.inc.php";
-                        // var_dump($dataArray[12][0]["task"]);
+                        
+                        // $everydayTasks = [];
+                        // foreach($dataArray as $dataSubArray){
+                        //     if($dataSubArray[0]["is_everyday"]){
+                                
+                        //     }
+                        // }
+
                         while($day <= $daysInMonth){
                             echo "<tr>";
                             if($bool){
@@ -49,7 +56,7 @@
                             for ($i = $counter ; $i <= 7 ; $i++){
                                 if($day <= $daysInMonth){
                                     if($day == date("j")){
-                                        echo "<td class='bg-warning fw-bold'>" . $day . "<br>";
+                                        echo "<td class='bg-warning-subtle fw-bold'>" . $day . "<br>";
                                     } else {
                                         echo "<td>" . $day . "<br>"; 
                                     }
