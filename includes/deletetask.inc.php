@@ -3,9 +3,11 @@
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $id = $_POST["deleteBtn"];
+    
+    $logFile = __DIR__ . "/../logs/app.log";
 
     if(empty($id) || !ctype_digit($id)){
-        error_log("Delete failed: invalid id received. Value: $id", 3, "../logs/app.log");
+        error_log("Delete failed: invalid id received. Value: $id\n", 3,  $logFile);
         header("Location: ../calendar.php?error=invalid_id");
         exit;
     }
@@ -18,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt_delete_task->execute([$id]);
         
         if($stmt_delete_task->rowCount() == 0){
-            error_log("Delete failed: no task found with id=$id", 3, "../logs/app.log");
+            error_log("Delete failed: no task found with id=$id\n", 3,  $logFile);
             header("Location: ../calendar.php?error=task_not_found");
             exit;
         }
@@ -27,9 +29,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     } catch (Exception $e) {
         error_log(
-            "Database error during deletion (id=$id): " . $e->getMessage(),
+            "Database error during deletion (id=$id): " . $e->getMessage() . "\n",
             3,
-            "../logs/app.log"
+             $logFile
         );
 
         header("Location: ../calendar.php?error=server_error");
@@ -38,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 } else {
-    error_log("Delete request failed: Request method was not POST", 3, "../logs/app.log");
+    error_log("Delete request failed: Request method was not POST\n", 3,  $logFile);
     header("Location: ../calendar.php?error=invalid_request");
     exit;
 

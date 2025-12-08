@@ -9,7 +9,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $status = $_POST["status"];
 
     if($username == "" || $task == "" || $duration <=0){
-        die("Please fill in all mandatory fields correctly.");
+        error_log("Validating error: username='$username', task='$task', duration='$duration'", 3, "../logs/app.log");
+        header("Location: ../addtask.php?error=invalid_input");
+        exit;
     }
     if(empty($task_date)){
         $task_date = date("Y-m-d");
