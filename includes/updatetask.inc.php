@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt_update_task = $pdo->prepare($sql_update_task);
         $stmt_update_task->execute([$user_id, $task, $duration, $task_date, $isEveryday, $status, $taskId]);
 
-        header("Location: ../calendar.php?task=success");
+        header("Location: ../calendar.php?task=update");
         exit;
 
     } catch (Exception $e) {

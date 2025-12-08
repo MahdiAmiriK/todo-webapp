@@ -49,3 +49,9 @@ h6 {
   --bs-btn-padding-x: 0.2rem;
   --bs-btn-font-size: 0.5rem;
 }
+
+.deleteBtnForm {
+  float: right;
+  /* margin-top: -40px; */
+  transform: translateY(-100%);
+}

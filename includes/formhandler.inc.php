@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $stmt_insert_task = $pdo->prepare($sql_insert_task);
         $stmt_insert_task->execute([$user_id, $task, $duration, $task_date, $isEveryday, $status]);
 
-        header("Location: ../index.php?task=success");
+        header("Location: ../calendar.php?task=success");
         exit;
         
     } catch (Exception $e) {

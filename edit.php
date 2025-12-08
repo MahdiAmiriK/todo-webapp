@@ -59,12 +59,14 @@ $dataToEdit = $result_select_task;
             <button type="submit" class="btn btn-primary">Update</button>            
         </form>
 
-        <!-- <form action="deletetask.inc.php" method="post">
-                <button type="submit" class="btn btn-danger" name="deleteBtn" value="<?php echo htmlspecialchars($dataToEdit['id']) ?>">Delete</button>
-        </form> -->
+        <form class="deleteBtnForm" action="includes/deletetask.inc.php" method="post">
+                <input type="hidden" name="deleteBtn" value="<?php echo htmlspecialchars($dataToEdit['id']) ?>">
+                <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
     </section>
 </body>
 </html>
 
 
 
+ 
