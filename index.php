@@ -12,14 +12,16 @@
 
     <div class="container-lg">
         <div class="landingPageHeading">
-            <h1 class='landingPageH1'>Welcome to ToDoWebApp</h1>
-            <!-- <p class='slog'>Slogan</p> -->
+            <div class="landingPageInfo transbox">
+                <h1 class='landingPageH1'>ToDo Web App</h1>
+                 <p class='slog'>Your tasks won’t do themselves… unfortunately.</p>
+            </div>
 
         </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <a href="calendar.php" class="btn btn-secondary btn-lg">Calendar</a>
-            <a href="addtask.php" class="btn btn-secondary btn-lg">Add a Task</a>
-        </div>  
+        <div class="d-grid gap-3 col-md-4 col-sm-8 mx-auto mt-4">
+            <a href="calendar.php" class="btn btn-outline-primary btn-lg shadow">Calendar</a>
+            <a href="addtask.php" class="btn btn-outline-primary btn-lg shadow">Add a Task</a>
+        </div>
     
     </div>
 

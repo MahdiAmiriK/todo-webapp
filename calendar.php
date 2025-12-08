@@ -8,10 +8,13 @@
     <title>ToDo/Tasks</title>
 </head>
 <body>
-    <?php include "navbar.php" ?>
+    <?php 
+        $currentPage = 'calendar';
+        include "navbar.php" 
+    ?>
 
     <div class="cal_container p-3 bg-light rounded shadow">
-        <h3><?php echo date("F"); ?></h3>
+        <h3 class='calendar-title'><?php echo date("F"); ?></h3>
         <div class="calendar table-responsive">
             <table class="table table-bordered table-sm text-center align-middle w-100">
                 <thead class="table-dark">
@@ -56,21 +59,21 @@
                             for ($i = $counter ; $i <= 7 ; $i++){
                                 if($day <= $daysInMonth){
                                     if($day == date("j")){
-                                        echo "<td class='bg-warning-subtle fw-bold'>" . $day . "<br>";
+                                        echo "<td class='current-day'>" . $day . "<br>";
                                     } else {
                                         echo "<td>" . $day . "<br>"; 
                                     }
                                     if(!empty($dataArray[$day])){
                                         foreach($dataArray[$day] as $dataSubArray){
-                                            echo "<div class='card'>";
-                                                    echo "<h5 class='card-title'>";
+                                            echo "<div class='task-card'>";
+                                                    echo "<h5>";
                                                         echo  htmlspecialchars($dataSubArray["task"]);
                                                     echo "</h5>";
                                                     echo "<p>";
                                                         echo htmlspecialchars($dataSubArray["duration"]) . " min | " 
                                                         . htmlspecialchars($dataSubArray["username"]) . " | " 
                                                         . htmlspecialchars($dataSubArray["status"]) . " | " 
-                                                        . "<a href='edit.php?id=" . htmlspecialchars($dataSubArray["id"]) . "'><button type='button' class='btn btn-secondary btn-custom'>Edit</button></a>";
+                                                        . "<a href='edit.php?id=" . htmlspecialchars($dataSubArray["id"]) . "' class='badge bg-secondary text-decoration-none'>Edit</a>";
                                                     echo "</p>";
                                             echo "</div>";
                                         }

@@ -26,18 +26,20 @@ $dataToEdit = $result_select_task;
             <input type="hidden" name="id" value="<?php echo htmlspecialchars($dataToEdit['id']) ?>">
             <div class="mb-3">
                 <label for="username" class="form-label">Name</label>
-                <select class="form-select form-select-sm form-control" id="username" name="username">
+                <select class="form-select form-select-sm form-control" id="username" name="username" required>
                     <option value="vahid" <?php if(strtolower($dataToEdit['username']) == "vahid") echo "selected";?>>Vahid</option>
                     <option value="mahdi" <?php if(strtolower($dataToEdit['username']) == "mahdi") echo "selected";?>>Mahdi</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label for="task" class="form-label">Task</label>
-                <input type="text" class="form-control form-control-sm" id="task" placeholder="Your Task" name="task" value="<?php echo htmlspecialchars($dataToEdit['task']) ?>">
+                <input type="text" class="form-control form-control-sm" id="task" placeholder="Your Task" name="task" 
+                value="<?php echo htmlspecialchars($dataToEdit['task']) ?>" required>
             </div>
             <div class="mb-3">
                 <label for="duration" class="form-label">Duration</label>
-                <input type="number" class="form-control form-control-sm" id="duration" placeholder="Duration in Minutes" name="duration" value="<?php echo htmlspecialchars($dataToEdit['duration']) ?>">
+                <input type="number" class="form-control form-control-sm" id="duration" placeholder="Duration in Minutes" name="duration" 
+                value="<?php echo htmlspecialchars($dataToEdit['duration']) ?>" required>
             </div>
             <div class="mb-3">
                 <label for="task_date">Date</label>

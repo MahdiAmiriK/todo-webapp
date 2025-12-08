@@ -8,13 +8,17 @@
     <title>ToDo/Add</title>
 </head>
 <body>
-    <?php include "navbar.php" ?>
+    
+    <?php 
+        $currentPage = 'addtask';
+        include "navbar.php" 
+    ?>
 
     <section class="custom_container">
         <form action="includes/formhandler.inc.php" method="post">
             <div class="mb-3">
                 <label for="username" class="form-label">Name</label>
-                <select class="form-select form-select-sm form-control" id="username" name="username">
+                <select class="form-select form-select-sm form-control" id="username" name="username" required>
                     <option selected>Select your name</option>
                     <option value="vahid">Vahid</option>
                     <option value="mahdi">Mahdi</option>
@@ -22,11 +26,11 @@
             </div>
             <div class="mb-3">
                 <label for="task" class="form-label">Task</label>
-                <input type="text" class="form-control form-control-sm" id="task" placeholder="Your Task" name="task">
+                <input type="text" class="form-control form-control-sm" id="task" placeholder="Your Task" name="task" required>
             </div>
             <div class="mb-3">
                 <label for="duration" class="form-label">Duration</label>
-                <input type="number" class="form-control form-control-sm" id="duration" placeholder="Duration in Minutes" name="duration">
+                <input type="number" class="form-control form-control-sm" id="duration" placeholder="Duration in Minutes" name="duration" required>
             </div>
             <div class="mb-3">
                 <label for="task_date">Date</label>
