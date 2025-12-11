@@ -70,7 +70,8 @@
                                                         echo  htmlspecialchars($dataSubArray["task"]);
                                                     echo "</h5>";
                                                     echo "<p>";
-                                                        echo htmlspecialchars($dataSubArray["duration"]) . " min | " 
+                                                        echo htmlspecialchars(substr($dataSubArray["start"], 0, 5)) . " | " 
+                                                        . htmlspecialchars($dataSubArray["duration"]) . " min | " 
                                                         . htmlspecialchars($dataSubArray["username"]) . " | " 
                                                         . htmlspecialchars($dataSubArray["status"]) . " | " 
                                                         . "<a href='edit.php?id=" . htmlspecialchars($dataSubArray["id"]) . "' class='badge bg-secondary text-decoration-none'>Edit</a>";

@@ -7,6 +7,7 @@ try {
                             tasks.id,
                             users.username, 
                             tasks.task, 
+                            tasks.start,
                             tasks.duration, 
                             tasks.task_date, 
                             tasks.is_everyday, 

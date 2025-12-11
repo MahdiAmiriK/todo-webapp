@@ -37,6 +37,10 @@ $dataToEdit = $result_select_task;
                 value="<?php echo htmlspecialchars($dataToEdit['task']) ?>" required>
             </div>
             <div class="mb-3">
+                <label for="starting_time" class="form-label">Starting Time</label>
+                <input type="time" class="form-control form-control-sm" id="starting_time" placeholder="Starting Time" name="starting_time" required>
+            </div>
+            <div class="mb-3">
                 <label for="duration" class="form-label">Duration</label>
                 <input type="number" class="form-control form-control-sm" id="duration" placeholder="Duration in Minutes" name="duration" 
                 value="<?php echo htmlspecialchars($dataToEdit['duration']) ?>" required>

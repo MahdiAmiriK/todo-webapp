@@ -29,12 +29,16 @@
                 <input type="text" class="form-control form-control-sm" id="task" placeholder="Your Task" name="task" required>
             </div>
             <div class="mb-3">
-                <label for="duration" class="form-label">Duration</label>
-                <input type="number" class="form-control form-control-sm" id="duration" placeholder="Duration in Minutes" name="duration" required>
-            </div>
-            <div class="mb-3">
                 <label for="task_date">Date</label>
                 <input type="date" id="task_date" name="task_date">
+            </div>
+             <div class="mb-3">
+                <label for="starting_time" class="form-label">Starting Time</label>
+                <input type="time" class="form-control form-control-sm" id="starting_time" placeholder="Starting Time" name="starting_time" required>
+            </div>
+            <div class="mb-3">
+                <label for="duration" class="form-label">Duration</label>
+                <input type="number" class="form-control form-control-sm" id="duration" placeholder="Duration in Minutes" name="duration">
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="check_everyday" name="isEveryday">
