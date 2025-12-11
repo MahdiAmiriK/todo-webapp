@@ -38,12 +38,13 @@ $dataToEdit = $result_select_task;
             </div>
             <div class="mb-3">
                 <label for="starting_time" class="form-label">Starting Time</label>
-                <input type="time" class="form-control form-control-sm" id="starting_time" placeholder="Starting Time" name="starting_time" required>
+                <input type="time" class="form-control form-control-sm" id="starting_time" placeholder="Starting Time" name="starting_time"
+                value="<?php echo htmlspecialchars($dataToEdit['start']) ?>">
             </div>
             <div class="mb-3">
                 <label for="duration" class="form-label">Duration</label>
                 <input type="number" class="form-control form-control-sm" id="duration" placeholder="Duration in Minutes" name="duration" 
-                value="<?php echo htmlspecialchars($dataToEdit['duration']) ?>" required>
+                value="<?php echo htmlspecialchars($dataToEdit['duration']) ?>">
             </div>
             <div class="mb-3">
                 <label for="task_date">Date</label>
