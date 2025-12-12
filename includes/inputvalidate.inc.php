@@ -12,14 +12,7 @@ function validate($username, $task, $duration, $task_start_time, $task_date, $st
         return "long_task_text";
 
     }
-    if ($task_start_time !== '' && (
-        strlen($task_start_time) !== 5 ||          
-        $task_start_time[2] !== ':' ||                                  
-        (int)substr($task_start_time, 0, 2) < 0 ||              
-        (int)substr($task_start_time, 0, 2) > 23 ||              
-        (int)substr($task_start_time, 3, 2) < 0 ||               
-        (int)substr($task_start_time, 3, 2) > 59                 
-    )) {
+    if ($task_start_time !== null && !preg_match('/^\d{2}:\d{2}(:\d{2})?$/', $task_start_time)) {
         return "invalid_start_time";
     }
     if (empty($task_date) ||

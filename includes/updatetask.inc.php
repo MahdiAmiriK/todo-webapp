@@ -7,7 +7,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $username = isset($_POST["username"]) ? trim($_POST["username"]) : '';
     $task = isset($_POST["task"]) ? trim($_POST["task"]) : '';
     $duration = isset($_POST["duration"]) ? trim($_POST["duration"]) : '';
-    $starting_time = isset($_POST["starting_time"]) ? trim($_POST["starting_time"]) : '';
+    $starting_time = isset($_POST["starting_time"]) && trim($_POST["starting_time"]) !== ''
+        ? trim($_POST["starting_time"])
+        : null;
     $task_date = isset($_POST["task_date"]) ? trim($_POST["task_date"]) : '';
     $isEveryday = isset($_POST['isEveryday']) ? 1 : 0;
     $status = isset($_POST["status"]) ? trim($_POST["status"]) : '';

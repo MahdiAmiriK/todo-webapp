@@ -2,3 +2,12 @@
 Delete failed: no task found with id=323
 Delete failed: no task found with id=66
 Delete failed: no task found with id=223233
+Database error during update (id=23): SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect time value: '' for column `tododatabase`.`tasks`.`start` at row 1
+Database error during update (id=26): SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect time value: '' for column `tododatabase`.`tasks`.`start` at row 1
+Update failed: invalid_start_time
+Update failed: invalid_start_time
+Update failed: invalid_start_time
+Database error during update (id=23): SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect time value: '' for column `tododatabase`.`tasks`.`start` at row 1
+Database error during update (id=23): SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect time value: '' for column `tododatabase`.`tasks`.`start` at row 1
+Update failed: invalid_start_time
+Update failed: invalid_start_time
