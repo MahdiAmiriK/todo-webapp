@@ -16,7 +16,7 @@
     <div class="cal_container p-3 bg-light rounded shadow">
         <h3 class='calendar-title'><?php echo date("F"); ?></h3>
         <div class="calendar table-responsive">
-            <table class="table table-bordered table-sm text-center align-middle w-100">
+            <table class="table table-bordered table-sm text-center align-middle w-100 table-striped">
                 <thead class="table-dark">
                     <tr>
                     <th scope="col" class="fw-bold">Mon</th>
@@ -41,19 +41,15 @@
 
                         require_once "includes/monthtasks.inc.php";
                         
-                        // $everydayTasks = [];
-                        // foreach($dataArray as $dataSubArray){
-                        //     foreach($dataSubArray as $taskData){
-                        //         if($taskData["is_everyday"]){
-                        //             var_dump($taskData);
-                        //             echo "<br>";
-                        //         }
-                        //     }
-                        //     // var_dump($dataSubArray[2]);
-                        //     // if($dataSubArray[0]["is_everyday"]){
-                        //     //     var_dump($dataSubArray[0]);
-                        //     // }
-                        // }
+                        $everydayTasks = [];
+                        foreach($dataArray as $key => $dataSubArray){
+                            foreach($dataSubArray as $taskData){
+                                if($taskData["is_everyday"]){
+                                    array_push($everydayTasks, [$key, $taskData]);
+                                }
+                            }
+                        }
+                        // var_dump($everydayTasks);
 
                         while($day <= $daysInMonth){
                             echo "<tr>";
@@ -73,19 +69,35 @@
                                     if(!empty($dataArray[$day])){
                                         foreach($dataArray[$day] as $dataSubArray){
                                             echo "<div class='task-card'>";
-                                                    echo "<h5>";
-                                                        echo  htmlspecialchars($dataSubArray["task"]);
-                                                    echo "</h5>";
-                                                    echo "<p>";
-                                                        echo htmlspecialchars(substr($dataSubArray["start"], 0, 5)) . " | " 
-                                                        . htmlspecialchars($dataSubArray["duration"]) . " min | " 
-                                                        . htmlspecialchars($dataSubArray["username"]) . " | " 
-                                                        . htmlspecialchars($dataSubArray["status"]) . " | " 
-                                                        . "<a href='edit.php?id=" . htmlspecialchars($dataSubArray["id"]) . "' class='badge bg-secondary text-decoration-none'>Edit</a>";
-                                                    echo "</p>";
+                                                echo "<h5>";
+                                                    echo  htmlspecialchars($dataSubArray["task"]);
+                                                echo "</h5>";
+                                                echo "<p>";
+                                                    echo htmlspecialchars(substr($dataSubArray["start"], 0, 5)) . " | " 
+                                                    . htmlspecialchars($dataSubArray["duration"]) . " min | " 
+                                                    . htmlspecialchars($dataSubArray["username"]) . " | " 
+                                                    . htmlspecialchars($dataSubArray["status"]) . " | " 
+                                                    . "<a href='edit.php?id=" . htmlspecialchars($dataSubArray["id"]) . "' class='badge bg-secondary text-decoration-none'>Edit</a>";
+                                                echo "</p>";
                                             echo "</div>";
                                         }
                                     }
+                                    foreach($everydayTasks as $task){
+                                            if($task[0] < $day){
+                                                echo "<div class='task-card'>";
+                                                    echo "<h5>";
+                                                        echo  htmlspecialchars($task[1]["task"]);
+                                                    echo "</h5>";
+                                                    echo "<p>";
+                                                        echo htmlspecialchars(substr($task[1]["start"], 0, 5)) . " | " 
+                                                        . htmlspecialchars($task[1]["duration"]) . " min | " 
+                                                        . htmlspecialchars($task[1]["username"]) . " | " 
+                                                        . htmlspecialchars($task[1]["status"]) . " | " 
+                                                        . "<a href='edit.php?id=" . htmlspecialchars($task[1]["id"]) . "' class='badge bg-secondary text-decoration-none'>Edit</a>";
+                                                    echo "</p>";
+                                                echo "</div>";
+                                            }
+                                        }
                                     echo"</td>";
                                     $day++; 
                                 } else {
