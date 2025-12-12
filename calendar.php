@@ -43,9 +43,16 @@
                         
                         // $everydayTasks = [];
                         // foreach($dataArray as $dataSubArray){
-                        //     if($dataSubArray[0]["is_everyday"]){
-                                
+                        //     foreach($dataSubArray as $taskData){
+                        //         if($taskData["is_everyday"]){
+                        //             var_dump($taskData);
+                        //             echo "<br>";
+                        //         }
                         //     }
+                        //     // var_dump($dataSubArray[2]);
+                        //     // if($dataSubArray[0]["is_everyday"]){
+                        //     //     var_dump($dataSubArray[0]);
+                        //     // }
                         // }
 
                         while($day <= $daysInMonth){
