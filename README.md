@@ -4,7 +4,7 @@ Work in progress.
 
 ## Features
 
-- User login
+- User login(planned)
 - Task management
 - Recurring tasks logic
 
